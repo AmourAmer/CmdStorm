@@ -1,3 +1,9 @@
+pokemon
+eza morden tools
+function 使用Hyprland
+    # 如果不是nix环境，拒绝，请自己动手
+end
+
 function 起飞，提示符
     if ! command -vq starship
         安装 starship || return 1 # 我也不知道返回几好
