@@ -9,10 +9,12 @@
 
 # 用法
 
-复制并运行下面的指令（请确保安装了[fish shell](fishshell.com/)，以后也许能把自动装fish加上）
+复制并运行下面的指令
 ```sh
-test -d ~/.config/CmdStorm || git clone --depth 1 https://github.com/AmourAmer/CmdStorm.git ~/.config/CmdStorm || return 1
-cd .config/CmdStorm && source ./入口.fish || echo 加载失败
+test -d ~/.local/share/CmdStorm || git clone --depth 1 https://github.com/AmourAmer/CmdStorm.git ~/.local/share/CmdStorm || return 1
+cd ~/.local/share/CmdStorm 
+bash ./biu.sh
+source ./入口.fish || echo 加载失败
 cd -
 ```
 

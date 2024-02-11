@@ -13,6 +13,7 @@
 }
 
 安装() {
+	# 检查最近更新时间
 	if command -v paru >/dev/null; then
 		paru -S $@
 	elif command -v yay >/dev/null; then
@@ -21,7 +22,7 @@
 		sudo pacman -S $@
 	else
 		结语 怎么连pacman都没有？目前本项目只支持arch系发行版
-		# exit 1
+		exit 1
 	fi
 }
 
@@ -40,6 +41,11 @@
 # GTK_IM_MODULE=fcitx
 # QT_IM_MODULE=fcitx
 # XMODIFIERS=@im=fcitx
-结语 输入法已经安装好咯，登出再重进就可以快乐地输入中文啦～
-结语 切换输入法的快捷键可能是Ctrl+Shift，也可能是Ctrl+空格，点任务栏里的键盘图标试试吧，想看纯文本的话可以看看~/.config/fcitx5/config
+提示 输入法已经安装好咯，登出再重进就可以快乐地输入中文啦～
+提示 切换输入法的快捷键可能是Ctrl+Shift，也可能是Ctrl+空格，点任务栏里的键盘图标试试吧，想看纯文本的话可以看看~/.config/fcitx5/config
+提示 有了中文之后，就可以几乎正式开始使用此项目咯！但是在此之前，还需要安装一些软件
+安装 fish
+# 是否要设为默认shell？默认否
+# 是否安装wezterm？不然的话你要手动配alias之类的
+# default key map
 # settings/Regional Settings/Input Method/Configure global options/Trigger Input Method(Or maybe sth else)
