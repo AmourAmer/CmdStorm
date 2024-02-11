@@ -1,4 +1,5 @@
 保留关键字：@（作插件前缀）
+how to search
 不要用$1这种，可能会被翻译成其他语言
 支持kde和hyprland,arch;kde nix
 hyprland美化，预设与教程
@@ -14,6 +15,7 @@ v0
 安装方式的database
 长耗时/需要学习的指令给出prompt
 禁用已学会的指令
+我喜欢/讨厌这个prompt/sth else
 
 v1
 插件系统，插件管理器
