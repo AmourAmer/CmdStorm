@@ -9,7 +9,7 @@
 
 # 用法
 
-复制并运行下面的指令
+复制（网页上代码框的右上角应该有个一键复制的按钮）并运行下面的指令
 ```sh
 test -d ~/.local/share/CmdStorm || git clone --depth 1 https://github.com/AmourAmer/CmdStorm.git ~/.local/share/CmdStorm || return 1
 cd ~/.local/share/CmdStorm 
