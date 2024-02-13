@@ -11,17 +11,17 @@
 
 复制（网页上代码框的右上角应该有个一键复制的按钮）并运行下面的指令
 ```sh
-test -d ~/.local/share/CmdStorm || git clone --depth 1 https://github.com/AmourAmer/CmdStorm.git ~/.local/share/CmdStorm || return 1
-cd ~/.local/share/CmdStorm 
-bash ./biu.sh
-source ./入口.fish || echo 加载失败
-cd -
+test -d ~/.local/share/CmdStorm || git clone --depth 1 https://github.com/AmourAmer/CmdStorm.git ~/.local/share/CmdStorm 
+bash ~/.local/share/CmdStorm/src/biu.sh
 ```
 
 如果已经下载过了，可以直接执行
 ```fish
-cd .config/CmdStorm && source ./入口.fish || echo 加载失败
-cd -
+出没风波里
+```
+或
+```fish
+source ~/.local/share/CmdStorm/src/入口.fish 
 ```
 即可在当前session中使用中文指令
 %% TODO 如何持久化
