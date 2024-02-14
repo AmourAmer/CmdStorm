@@ -15,7 +15,6 @@
 
 TUCAO=
 安装() {
-	# TODO 检查最近更新时间
 	提示 即将安装『$@』
 	if command -v paru >/dev/null; then
 		paru -S $@
@@ -32,12 +31,12 @@ TUCAO=
 			提示 又到了需要自己动手装『$@』的时候了
 		fi
 		提示 如果成功安装了，就继续吧；否则可以Ctrl+C退出
-	fi || 提示 看上去安裝出了问题？如果这不是你期待的结果，请尝试故障排查，简单的办法运行此指令重新运行本脚本：bash $0
+	fi || 提示 看上去安裝出了问题？如果这不是你期待的结果，请尝试故障排查，简单的办法运行此指令重新运行本脚本：『bash $0』
 }
 
 问询() {
 	DEFAULT=${2:-no}
-	read -p 你希望$1么？[y/n]（默认${DEFAULT}） choice
+	read -p "你希望$1么？[y/n]（默认${DEFAULT}）" choice
 	case ${choice:-$DEFAULT} in
 	[nN]*) return 1 ;;
 	否*) return 1 ;;
