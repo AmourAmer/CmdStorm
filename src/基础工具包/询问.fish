@@ -1,7 +1,9 @@
 function 询问 --description "格式：问题 默认值"
-    : # 强制清空$status，不然会影响set的返回值
-    if not set --local DEFAULT $argv[2]
+    set --local DEFAULT
+    if ! set --query argv[2]
         set DEFAULT no
+    else
+        set DEFAULT $argv[2]
     end
     read -P "你希望$argv[1]么？[y/n]（默认$DEFAULT）" choice || return 3
     test -z $choice && set choice $DEFAULT
