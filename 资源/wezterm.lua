@@ -11,15 +11,15 @@
 -- 如果想知道的话可以看看源码里面哪些在声明占有之前是没判是否持有的
 --#~#~#~#~#
 -- Pull in the wezterm API
-local wezterm = require 'wezterm'
+local wezterm = require("wezterm")
 
 -- This will hold the configuration.
 local config = wezterm.config_builder()
 
-config.font = wezterm.font_with_fallback {
-  'FiraCode Nerd Font',
-  'DengXian',
-}
+config.font = wezterm.font_with_fallback({
+	"Delugia Book",
+	"DengXian",
+})
 
 config.use_ime = true
 

@@ -4,6 +4,7 @@
 function 安装终端模拟器
     command -vq wezterm || 安装 wezterm || return 2
     # TODO shortcut super+enter to open
+    # TODO below no more fira install delugia
     提示 wezterm默认的字体显示密码的时候有图标无法显示\nFira Code字体中有所需图标
     询问 "安装Fira Code" 是 && 安装 ttf-firacode-nerd || 询问 继续设置wezterm的字体 || return 2
     if not test -d ~/.config/fish/conf.d/
@@ -11,6 +12,7 @@ function 安装终端模拟器
         return 1
     end
     grep wezterm：firacode-nerd ~/.config/CmdStorm/profile || echo wezterm：firacode-nerd >>~/.config/CmdStorm/profile # TODO
-    cp ~/.local/share/CmdStorm/资源/wezterm.lua ~/.config/wezterm/wezterm.lua
+    mkdir ~/.config/wezterm/ # TODO other strange path
+    cp $CMD_STORM_PATH/资源/wezterm.lua ~/.config/wezterm/wezterm.lua
     return 0
 end
