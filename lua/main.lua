@@ -8,8 +8,16 @@ local F = {}
 function F.fish(conf)
 	-- TODO an option to toggle put in the conf or in a .fish file?
 	local config_fish = ""
-	-- alias
 	config_fish = config_fish .. "if status is-interactive\n"
+	-- is-interactive
+	for app, content in pairs(conf) do
+		if content["interactive"] then
+			for _, v in pairs(content["interactive"]) do
+				config_fish = config_fish .. v .. " # CmdStorm因" .. app .. "的选项自动生成\n"
+			end
+		end
+	end
+	-- alias
 	for app, content in pairs(conf) do
 		if content["alias"] then
 			for _, v in pairs(content["alias"]) do
@@ -36,7 +44,7 @@ for key, value in pairs(profile) do
 	-- TODO require failure? unused value? output to where?
 	if value then
 		-- TODO shouldn't do this, should have sort of acl
-		state = util.require("src." .. key).generate(value)
+		state = util.require("src." .. key).generate(value) -- TODO doesn't exist?
 		for k, v in pairs(state) do
 			-- TODO there is potential type problem
 			if states[k] then
@@ -53,7 +61,9 @@ end
 -- generate files from values of state
 -- TODO value should have a more appropriate name
 for app, value in pairs(states) do
-	F[app](value)
+	if F[app] then
+		F[app](value)
+	end -- TODO else?
 end
 
 -- TODO record managed files. apply patches

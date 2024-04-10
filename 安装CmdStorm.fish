@@ -1,6 +1,5 @@
 set -l CMD_STORM_PATH (path dirname (realpath (status current-filename)))
-source $CMD_STORM_PATH/src/基础工具包/提示.fish
-source $CMD_STORM_PATH/src/生成配置.fish
+source $CMD_STORM_PATH/entry.fish
 
 提示 即将安装CmdStorm
 echo "if M.CmdStorm then
