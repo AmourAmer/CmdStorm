@@ -1,4 +1,13 @@
 function 生成配置
+    echo "\
+-- 此文件由CmdStorm自动生成，请勿编辑！
+-- 请修改旁边的profile.raw.lua文件，那个（只要程序没bug）不会被覆盖
+local M = {}
+" >~/.config/CmdStorm/lua/profile.lua
+    # TODO path
+    cat ~/.config/CmdStorm/lua/profile.raw.lua >>~/.config/CmdStorm/lua/profile.lua
+    echo "
+return M" >>~/.config/CmdStorm/lua/profile.lua
     cd $CMD_STORM_PATH/lua/ || return 4
     # split, check, generate, 
     set -l start 1

@@ -1,0 +1,14 @@
+set -l CMD_STORM_PATH (path dirname (realpath (status current-filename)))
+source $CMD_STORM_PATH/src/基础工具包/提示.fish
+source $CMD_STORM_PATH/src/生成配置.fish
+
+提示 即将安装CmdStorm
+echo "if M.CmdStorm then
+  M.CmdStorm.path = \"$CMD_STORM_PATH\"
+else 
+  M.CmdStorm = {
+    path = \"$CMD_STORM_PATH\"
+  }
+end -- 由" (realpath (status current-filename)) 于 (date) 添加 >>~/.config/CmdStorm/lua/profile.raw.lua # TODO path, conceal info(or simply a `sed`), not a function?!(relative 学习咒语)
+生成配置
+提示 应该要写一些使用提示的，但是我还没写，如果你在使用最新版且看到了这行请来踢我，谢谢！
