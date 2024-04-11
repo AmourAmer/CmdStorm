@@ -1,6 +1,9 @@
 # TODO should compile and generate, don't use conditions everytime
 # I wanted to use cowsay, but there's issue with Chinese. Pity.
 function 提示
+    if set -q CMD_STORM_SILENT; and test $CMD_STORM_SILENT -ne 0
+        return
+    end
     if command -q lolcat
         echo $argv | lolcat
     else

@@ -6,6 +6,9 @@ function M.generate(conf)
 		return {}
 	end
 	local interactive = { "source " .. cmd_storm_path .. "/entry.fish" }
+	if conf.silent then
+		table.insert(interactive, "set -gx CMD_STORM_SILENT 1")
+	end
 	return {
 		fish = {
 			interactive = interactive,
