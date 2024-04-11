@@ -80,19 +80,21 @@ states = {}
 -- use configs to compute final state
 for key, value in pairs(profile) do
 	-- TODO require failure? unused value? output to where?
-	if value then
-		-- TODO shouldn't do this, should have sort of acl
-		state = util.require("src." .. key).generate(value) -- TODO doesn't exist?
-		for k, v in pairs(state) do
-			-- TODO there is potential type problem
-			if states[k] then
-				states[k][key] = v
-			else
-				states[k] = {}
-				states[k][key] = v
-			end
+	if not value then
+		goto skip
+	end
+	-- TODO shouldn't do this, should have sort of acl
+	state = util.require("src." .. key).generate(value) -- TODO doesn't exist?
+	for k, v in pairs(state) do
+		-- TODO there is potential type problem
+		if states[k] then
+			states[k][key] = v
+		else
+			states[k] = {}
+			states[k][key] = v
 		end
 	end
+	::skip::
 end
 
 -- TODO and where should user funcs be used?
