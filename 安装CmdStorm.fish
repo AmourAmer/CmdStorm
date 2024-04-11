@@ -4,9 +4,11 @@ source $CMD_STORM_PATH/entry.fish
 提示 即将安装CmdStorm
 echo "if M.CmdStorm then
   M.CmdStorm.path = \"$CMD_STORM_PATH\"
+  M.CmdStorm.fish_greeting = \"new\"
 else 
   M.CmdStorm = {
-    path = \"$CMD_STORM_PATH\"
+    path = \"$CMD_STORM_PATH\",
+    fish_greeting = \"new\"
   }
 end -- 由" (realpath (status current-filename)) 于 (date) 添加 >>~/.config/CmdStorm/lua/profile.raw.lua # TODO path, conceal info(or simply a `sed`), not a function?!(relative 学习咒语)
 生成配置

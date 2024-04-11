@@ -6,3 +6,7 @@ v0.1.1
 - install & uninstall
 - fish, starship, zoxide
 - silent mode
+
+TODO URGENT confirm on overwriting unmanaged files
+TODO shasum rawprofile
+TODO add comments

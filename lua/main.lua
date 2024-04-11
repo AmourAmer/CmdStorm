@@ -30,6 +30,21 @@ function F.fish(conf)
 		end
 	end
 	config_fish = config_fish .. "end\n"
+	-- fish_greeting
+	local fish_greeting
+	for app, content in pairs(conf) do
+		if content.fish_greeting then
+			-- TODO conflict
+			fish_greeting = content["fish_greeting"]
+			config_fish = config_fish
+				.. "function fish_greeting"
+				.. " # CmdStorm因"
+				.. app
+				.. "的选项自动生成\n"
+				.. fish_greeting
+				.. "\nend\n"
+		end
+	end
 	print(
 		".config/fish/config.fish\n"
 			.. config_fish
