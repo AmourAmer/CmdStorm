@@ -1,6 +1,6 @@
 package.path = package.path .. ";./?.lua" -- why lua of nix doesn't include this?
 local util = require("util")
-local profile = util.require("profile")
+local profile = util.require("profile") -- TODO print into local/share
 local F = {}
 
 -- TODO how about conflicts?

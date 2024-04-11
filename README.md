@@ -11,13 +11,28 @@
 
 ## 用法
 
+试用：
 ```fish
 source ./entry.fish
+```
+
+安装：
+```fish
+fish ./安装CmdStorm.fish
 ```
 
 就可以使用中文指令了！
 虽然现在有意义的只有一条 `lavi`，能够帮你下载 LazyVim 并设置 lavi 这个别名——如果你已经有了nvim lua git之类的玩意儿
 对，我知道，它不是中文。对不起。
+
+## FAQ
+
+Q: 为什么这个项目面向对象是中文用户，但是FAQ里有英文问题？
+A: 为了节省你的时间，不浪费在一些与你无关的事情上面。
+
+Q: The profile.lua looks just like the nix language.
+A: Indeed. If you want more control, you can of course use nix instead. After all, this project is just a, concierge? One reason you may want cmd_storm is that you can configure things easily with commands. And you can track and modify your profile in lua.
+
 
 下面的还在施工，别看了！
 

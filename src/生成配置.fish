@@ -2,6 +2,7 @@ function 生成配置
     echo "\
 -- 此文件由CmdStorm自动生成，请勿编辑！
 -- 请修改旁边的profile.raw.lua文件，那个（只要程序没bug）不会被覆盖
+-- 如果你嫌这坨玩意儿不好看，可以看~/.local/share/CmdStorm/profile，如果没有这个文件请踢我更新
 local M = {}
 " >~/.config/CmdStorm/lua/profile.lua
     # TODO path
