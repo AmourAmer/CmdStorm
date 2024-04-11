@@ -31,12 +31,14 @@ Q: 为什么这个项目面向对象是中文用户，但是FAQ里有英文问�
 A: 为了节省你的时间，不浪费在一些与你无关的事情上面。
 
 Q: The profile.lua looks just like the nix language.
-A: Indeed. If you want more control, you can of course use nix instead. After all, this project is just a, concierge? One reason you may want cmd_storm is that you can configure things easily with commands. And you can track and modify your profile in lua.
+A: Indeed. If you want more control, you can of course use nix instead. After all, this project is just a, concierge? One reason you may want cmd_storm is that you can configure things easily with commands. And you can track and modify your profile in lua. And CmdStorm shouldn't manage your nix profile. ? Well, maybe could? Yes, I should, because I don't know how to config fcitx ctrl+shift shortcut.(Actually I know, I mean there may be something else I don't how to config while can be done by nix)
 
 
 下面的还在施工，别看了！
 
 所需软件：lua git 等
+
+note: 别tmd那么勤劳，多按tab！比如`定时（按秒计）`和`定时（按分计）`
 
 复制（网页上代码框的右上角应该有个一键复制的按钮）并运行下面的指令
 ```sh
@@ -59,9 +61,9 @@ source ~/.local/share/CmdStorm/src/入口.fish
 
 %% TODO 注意指令依赖，如systemd
 
-## 所需发行版
-
-nix
+## 所需环境
+- nix(pkg)
+- KDE(or hyprland?)
 
 ## 破茧
 
