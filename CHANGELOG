@@ -1,0 +1,8 @@
+v0.1.0
+- nix
+- LazyVim
+
+v0.1.1
+- install & uninstall
+- fish, starship, zoxide
+- silent mode
