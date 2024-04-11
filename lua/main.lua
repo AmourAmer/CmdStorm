@@ -22,7 +22,7 @@ function F.fish(conf)
 		if content["alias"] then
 			for _, v in pairs(content["alias"]) do
 				config_fish = config_fish
-					.. ("alias " .. v[1] .. " " .. v[2]) -- 缩进什么的，管不了了，要么用啥玩意儿来fmt一下
+					.. ("alias " .. v[1] .. ' "' .. v[2] .. '"') -- 缩进什么的，管不了了，要么用啥玩意儿来fmt一下
 					.. " # CmdStorm因"
 					.. app
 					.. "的选项自动生成\n"
@@ -80,19 +80,21 @@ states = {}
 -- use configs to compute final state
 for key, value in pairs(profile) do
 	-- TODO require failure? unused value? output to where?
-	if value then
-		-- TODO shouldn't do this, should have sort of acl
-		state = util.require("src." .. key).generate(value) -- TODO doesn't exist?
-		for k, v in pairs(state) do
-			-- TODO there is potential type problem
-			if states[k] then
-				states[k][key] = v
-			else
-				states[k] = {}
-				states[k][key] = v
-			end
+	if not value then
+		goto skip
+	end
+	-- TODO shouldn't do this, should have sort of acl
+	state = util.require("src." .. key).generate(value) -- TODO doesn't exist?
+	for k, v in pairs(state) do
+		-- TODO there is potential type problem
+		if states[k] then
+			states[k][key] = v
+		else
+			states[k] = {}
+			states[k][key] = v
 		end
 	end
+	::skip::
 end
 
 -- TODO and where should user funcs be used?

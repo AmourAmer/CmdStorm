@@ -12,7 +12,7 @@ then
   git clone --depth 1 https://github.com/LazyVim/starter ~/.config/]] .. nvim_appname .. [[ 
   rm -rf ~/.config/]] .. nvim_appname .. [[/.git
 fi ]])
-	local alias = { { nvim_appname, '"NVIM_APPNAME=' .. nvim_appname .. ' nvim"' } }
+	local alias = { { nvim_appname, "NVIM_APPNAME=" .. nvim_appname .. " nvim" } }
 	-- TODO shit, I lost this file when using lazygit! Also tons of time. Not quite sure if I missed anything
 	return {
 		fish = {

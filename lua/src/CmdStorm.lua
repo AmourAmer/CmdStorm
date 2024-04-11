@@ -31,10 +31,12 @@ echo 感谢使用，感谢支持！
 echo 啊，恶心心！（谁能告诉我怎么获得fish的背景色啊，我好把这句吐槽藏起来）
 ]]
 	end
+	local alias = conf.alias or {}
 	return {
 		fish = {
 			interactive = interactive,
 			fish_greeting = fish_greeting,
+			alias = alias,
 		},
 	}
 end
