@@ -7,6 +7,13 @@ v0.1.1
 - fish, starship, zoxide
 - silent mode
 
+v0.2.0
+- 占有前询问
+- preset
+
+v0.2.1
+
 TODO URGENT confirm on overwriting unmanaged files
 TODO shasum rawprofile
 TODO add comments
+TODO make functions return more meaningful and exact than simply 0

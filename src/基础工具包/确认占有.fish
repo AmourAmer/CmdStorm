@@ -6,5 +6,5 @@ function 确认占有 --description 决定是否实地写入文件
         求求 抱歉，只能确认一个文件是否要占有
         return 1
     end
-    判定占有 "$argv" || : # DEBUG
+    判定占有 "$argv" || 询问 由CmdStrom接管$argv
 end
