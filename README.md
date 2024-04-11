@@ -1,10 +1,16 @@
 项目正在构建中
 该文件内容目前仅供参考，具体请查看除`arch/`外的文件
 
+不会技术能用linux么？
+可以，只要你能按出终端，会说中文，就能获得甚至胜过windows的体验！
 ## 用途
+if you know tech details, of course you don't need this
+but if you want to make pc understand(partially) Chinese, or love this proj, come on.
 
 让新手用中文与[fish](fishshell.com/)进行亲切的交流学习~
 新手是不是看不懂上面这行？
+让你获得一种心安：能够在想知道的时候知道
+also feel safe and sound
 
 注意，这些指令均为与人类交互而设计，满足日常使用需求， **非常不建议自动化脚本中使用这些指令**！ 
 可以通过 `type 某指令` 来查看其包装下的真实指令
@@ -33,6 +39,8 @@ A: 为了节省你的时间，不浪费在一些与你无关的事情上面。
 Q: The profile.lua looks just like the nix language.
 A: Indeed. If you want more control, you can of course use nix instead. After all, this project is just a, concierge? One reason you may want cmd_storm is that you can configure things easily with commands. And you can track and modify your profile in lua. And CmdStorm shouldn't manage your nix profile. ? Well, maybe could? Yes, I should, because I don't know how to config fcitx ctrl+shift shortcut.(Actually I know, I mean there may be something else I don't how to config while can be done by nix)
 
+Q：保真么？
+A：当然不。那样成本就太大了，效率太低。我只负责把我这些时间来使用的理解写出来，如果有问题，可能是我太菜，理解能力不够，没有能力细看，也可能是写的人不行，但不管怎么样，免责声明在此。欢迎纠错！
 
 下面的还在施工，别看了！
 
@@ -59,7 +67,7 @@ source ~/.local/share/CmdStorm/src/入口.fish
 
 ## 目录结构
 
-%% TODO 注意指令依赖，如systemd
+为什么生成步骤这么复杂？为了简单
 
 ## 所需环境
 - nix(pkg)
@@ -73,6 +81,7 @@ if you love this proj
 井井有条
 漂亮
 尽在掌控
+Don't repeat yourself
 
 - 只需要一个文件夹就可以复现系统软件和配置，与nix相比的优点是你使用本项目会自动改那个文件夹，而且里面提示非常友好 maybe need version lock
 - 中文指令！各种炫酷操作和好用配置，一键解决！如备份文件

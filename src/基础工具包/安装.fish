@@ -1,6 +1,8 @@
 function 安装
     # TODO search or bb on failure
+    # TODO or temply?
     提示 "即将安装『$argv』"
+    # TODO 支持一下termux？
     if command -q nix-env
         nix-env -iA nixos.$argv && echo 安装好"$argv"了，真不错 && return 0
     end

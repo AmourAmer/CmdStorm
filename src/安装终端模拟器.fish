@@ -2,7 +2,7 @@
 # KDE shortcut
 function 安装终端模拟器
     command -vq kitty || 安装 kitty || return 2
-    # TODO shortcut super+enter to open
+    # TODO shortcut super+enter to open, and default shell
     # TODO below no more fira install delugia
     询问 "安装Fira Code" 是 && 安装 ttf-firacode-nerd || 询问 继续设置wezterm的字体 || return 2
     if not test -d ~/.config/fish/conf.d/

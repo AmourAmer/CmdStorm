@@ -12,8 +12,110 @@ v0.2.0
 - preset
 
 v0.2.1
+- alias rm
 
-TODO URGENT confirm on overwriting unmanaged files
-TODO shasum rawprofile
-TODO add comments
-TODO make functions return more meaningful and exact than simply 0
+## NOW 
+- switch to event
+- make
+- polish README
+- 提拉米苏
+
+## lvl0
+- 用这个项目写课本，追踪你的学习路线？（怎么听着像[隔壁项目](https://github.com/AmourAmer/xyloq)干的事情？）
+- 确定结构并自动make+所需特性齐全
+
+## lvl1
+required:
+- community plugin safety
+- use emoji
+- learn how to ask. search 1st
+  - github issue https://github.com/Anduin2017/HowToCook/issues/1317
+- tedious mode, show conf diff
+- 订阅列表关键字，比如这个项目只支持nvim，需要emacs可以先去推荐列表看看或者自己找一些别的来订阅，但是用到的时候才下具体的库
+- show examples of grep args
+- local/share store data
+- feedback
+- fish completions
+- 长耗时/需要学习的指令给出prompt
+- 禁用已学会的指令
+- 我喜欢/讨厌这个prompt/sth else
+- 自定义备忘notes，unicode之类的
+- 抄自发展规划文件的，唯一一行我看不懂的：安装方式的database
+- apps
+  - kopia chezmoi 备份！/快照！
+  - font config lxgw
+  - screenshots
+  - 文件同步，用syncthing什么的开源产品
+  - alias git to gji(or 饭桶) with wonderful template
+  - journal 
+  - auto install input method
+  - use pinyin/other scheme, rime-ice and double-pinyin conflicts(wait, as you can subscribe to nur, you can also use lr(local repo))
+  - caps2esc
+
+
+other:
+- shasum rawprofile
+- 高效简洁模式，或者温柔模式，搞笑模式（听着也像隔壁的）
+- info pager? interact?
+- searchable tags
+- auto git commit when no change in 5min
+- insane 3-stage rm 
+- execute demo cmds in sandbox(maybe bwrap?)
+- nix iso with pre-installed cmdstorm
+- 法律模板
+- an app named what to do
+- 强制干活，不然不跑指令？
+- 终端聊天？
+- patch conf.nix
+- poems
+- undo profile(with git?)
+- 切换kde主题
+- firefox plugins auto dark
+- run github repo, with sandbox and auto-detect run cmds
+- other lang? maybe prefix with a v or ,?
+- tui，informative
+
+## lvl2
+- add comments
+- version related?(what's this?)
+- backup, add time info something when ... conf file
+- set show passwd * or not, and indicate
+- gradually learn and config nvim
+- abbr
+- tldr auto update(should be configurable?)
+- git branch rebase
+- auto git profile change(what does this mean?)
+- 抱怨没有readme的git repo
+- 配置文件没有默认，必须写出，提示所有可选项，不写就不干，自动生成管理（但愿能做到）
+- 查看已手动安装的程序
+- what if profile.lua fails
+- poems
+- 字体 已知问题 对比（？）
+- kitty背景图或透明
+- show patch upon generating conf
+- we use unstable unfree(?)
+- auto gitignore
+- lazygit delta difft
+- steam install game into global position with correct permission(maybe game grp?)
+- switch between profiles, that's just profile.raw.lua and local/share data?
+- permission issue?
+- record screen(customize with previews)
+- todo 故事的力量 taskwarrior website?
+- make functions return more meaningful and exact than simply 0
+- 渐进学习typst
+- map K to translate
+- hyprland美化，预设与教程
+- ranger
+
+## other
+
+- front end of fcitx in fish?
+- emacs support? recruit
+
+等项目相对成熟了，某一天当所有的PR和issue都被处理完后，我就归档这个repo
+
+## NOTICE
+- 配置文件没有默认，必须写出，提示所有可选项，不写就不干，自动生成管理（但愿能做到）
+- 保留关键字：@（作插件前缀？）
+- 不要用$1这种，可能会被翻译成其他语言
+- 注意指令依赖，如systemd
