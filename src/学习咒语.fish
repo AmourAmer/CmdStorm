@@ -1,5 +1,5 @@
 function 学习咒语 --on-event fish_preexec # TODO 应该被编译出来
-    set -l cmd "$argv[1]"
+    set -l cmd (echo $argv | awk '{ print $1 }')
     if type -q "$cmd" # TODO shit, command -vq doesn't know alias!
         return
     end
@@ -17,6 +17,13 @@ function 学习咒语 --on-event fish_preexec # TODO 应该被编译出来
     else if test "$cmd" = starship # TODO 强烈感觉应该改变文件结构了，这些文件应该是编译生成的，比如src/工具包/编译CmdStorm
         echo "M.starship = {} -- 由" (status current-function) 因指令 $argv 于 (date) 添加 >>~/.config/CmdStorm/lua/profile.raw.lua # TODO untested
         生成配置
+    else if test "$cmd" = edge
+        echo "
+听劝！快跑！别用Edge！
+请用开源软件firefox！
+或者chrome的开源（被google阉割）版chromium
+chrome系软件推荐vivaldi
+"
     end
     # TODO 加载插件内容
 end
