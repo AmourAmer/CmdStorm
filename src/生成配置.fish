@@ -16,6 +16,9 @@ return M" >>~/.config/CmdStorm/lua/profile.lua
     set -l file_content ''
     while read line
         if test $start -eq 1
+            if test -z $line
+                continue
+            end
             set file_path "$line"
             set file_content ''
             set start 0

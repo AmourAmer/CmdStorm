@@ -2,7 +2,7 @@ function 声明占有 --description 无情地给所有文件添加头尾注释�
     set -l info "\
 此文件为CmdStorm所占有
 在其中的修改很可能会被程序覆盖
-建议通过提供的中文指令来修改，方便省心；或者编辑~/.config/CmdStorm/lua/profile.lua
+建议通过提供的中文指令来修改，方便省心；或者编辑~/.config/CmdStorm/lua/profile.raw.lua
 如果你想从CmdStorm手中接管此文件
 可以删除此段（主要是删除下面这行）"\n
     for file in $argv
@@ -30,7 +30,7 @@ function comment_sign # shouldn't have space
     switch "$argv"
         case '.lua'
             echo --
-        case '.fish'
+        case '.fish' '.toml'
             echo '#' # Yes, redundant. Should be deleted
         case '*'
             echo '#'

@@ -37,6 +37,29 @@ function F.fish(conf)
 	)
 end
 
+function F.starship(conf)
+	local preset
+	local starship_toml = ""
+	for app, content in pairs(conf) do
+		if content.preset then
+			starship_toml = starship_toml
+				.. "# CmdStorm因"
+				.. app
+				.. "的选项preset "
+				.. content.preset
+				.. "自动生成\n"
+			preset = content.preset
+		end
+	end
+	if preset then
+		print(".config/starship.toml\n" .. starship_toml)
+		os.execute("starship preset " .. preset)
+		print(
+			"\n华丽丽的分割线，就靠这行来分文件了，不可能故意跟我重吧？救命啊，要不是我不会数lua的字符串里的回车数岂能这么憋屈\n"
+		)
+	end
+end
+
 states = {}
 
 -- use configs to compute final state
