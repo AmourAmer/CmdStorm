@@ -23,5 +23,5 @@ M.CmdStorm.fish_greeting = M.CmdStorm.fish_greeting or \"new\"
     else
         return 2
     end
-    生成配置
+    emit CmdStorm_profile_changed
 end

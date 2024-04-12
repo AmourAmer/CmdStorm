@@ -11,5 +11,5 @@ else
     fish_greeting = \"new\"
   }
 end -- 由" (realpath (status current-filename)) 于 (date) 添加 >>~/.config/CmdStorm/lua/profile.raw.lua # TODO path, conceal info(or simply a `sed`), not a function?!(relative 学习咒语)
-生成配置
+emit CmdStorm_profile_changed
 提示 应该要写一些使用提示的，但是我还没写，如果你在使用最新版且看到了这行请来踢我，谢谢！
