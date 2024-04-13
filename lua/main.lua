@@ -85,9 +85,6 @@ for app, value in pairs(states) do
 	if not F.generate then -- TODO any better way to validate?
 		goto skip2
 	end
-	for i, v in pairs(F) do
-		print(i, v)
-	end
 	pcall(F.init)
 	for user, content in pairs(value) do
 		-- TODO acl
