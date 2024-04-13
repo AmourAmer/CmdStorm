@@ -8,8 +8,8 @@ for pkg in $CMD_STORM_PATH/pkgs/* # TODO should also source .loca/share?config?
     mkdir -p $path/lua/pkgs/$pkg
     set ipath $path/pkgs/$pkg
     set opath $path/lua/pkgs/$pkg/init.lua
-    echo "由CmdStorm自动生成，请勿编辑！" >$opath
-    echo "Please edit lua files in your config dir and run compile.fish" >>$opath
+    echo "-- 由CmdStorm自动生成，请勿编辑！" >$opath
+    echo "-- Please edit lua files in your config dir and run compile.fish" >>$opath
     echo "local M = {}" >>$opath
     cat $ipath/generate.lua >>$opath
     cat $ipath/conf.lua >>$opath

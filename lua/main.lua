@@ -27,58 +27,18 @@ function util.require(module)
 	end
 end
 
+function back_link(str, app, conf) -- ! 要自己带上注释哦！
+	local detail = ""
+	if conf then
+		detail = "的某些选项（我还不是很会输出lua的table所以暂时在这看不了）"
+		-- 的选项 preset " .. content.preset
+	end
+	return str .. "CmdStorm因" .. app .. "这选项" .. detail .. "自动生成\n"
+end
+
 local profile = util.require("profile") -- TODO print into local/share
 local acl = util.require("acl") -- TODO create and use
 local F = {}
-
--- TODO how about conflicts?
--- TODO maybe I should split into files
-function F.fish(conf)
-	-- TODO an option to toggle put in the conf or in a .fish file?
-	local config_fish = ""
-	config_fish = config_fish .. "if status is-interactive\n"
-	-- is-interactive
-	for app, content in pairs(conf) do
-		if content["interactive"] then
-			for _, v in pairs(content["interactive"]) do
-				config_fish = config_fish .. v .. " # CmdStorm因" .. app .. "的选项自动生成\n"
-			end
-		end
-	end
-	-- alias
-	for app, content in pairs(conf) do
-		if content["alias"] then
-			for _, v in pairs(content["alias"]) do
-				config_fish = config_fish
-					.. ("alias " .. v[1] .. ' "' .. v[2] .. '"') -- 缩进什么的，管不了了，要么用啥玩意儿来fmt一下
-					.. " # CmdStorm因"
-					.. app
-					.. "的选项自动生成\n"
-			end
-		end
-	end
-	config_fish = config_fish .. "end\n"
-	-- fish_greeting
-	local fish_greeting
-	for app, content in pairs(conf) do
-		if content.fish_greeting then
-			-- TODO conflict
-			fish_greeting = content["fish_greeting"]
-			config_fish = config_fish
-				.. "function fish_greeting"
-				.. " # CmdStorm因"
-				.. app
-				.. "的选项自动生成\n"
-				.. fish_greeting
-				.. "\nend\n"
-		end
-	end
-	print(
-		".config/fish/config.fish\n"
-			.. config_fish
-			.. "\n华丽丽的分割线，就靠这行来分文件了，不可能故意跟我重吧？救命啊，要不是我不会数lua的字符串里的回车数岂能这么憋屈\n"
-	)
-end
 
 states = {}
 

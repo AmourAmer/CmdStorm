@@ -2,12 +2,7 @@ local preset
 local starship_toml = ""
 function M.conf(app, content)
 	if content.preset then
-		starship_toml = starship_toml
-			.. "# CmdStorm因"
-			.. app
-			.. "的选项preset "
-			.. content.preset
-			.. "自动生成\n" -- TODO use func in main.lua to generate comment
+		starship_toml = back_link(starship_toml .. "# ", app, { preset = content.preset })
 		preset = content.preset
 	end
 end
