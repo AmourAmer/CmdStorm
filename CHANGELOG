@@ -14,9 +14,11 @@ v0.2.0
 v0.2.1
 - alias rm
 
-## NOW 
+v0.3.0
 - switch to event
-- make
+- compile
+
+## NOW 
 - polish README
 - 提拉米苏
 
@@ -41,6 +43,8 @@ required:
 - 我喜欢/讨厌这个prompt/sth else
 - 自定义备忘notes，unicode之类的
 - 抄自发展规划文件的，唯一一行我看不懂的：安装方式的database
+- 装软件的习惯！软件替代，其实是信任谁的问题
+- add license, interactively, and postponed
 - apps
   - kopia chezmoi 备份！/快照！
   - font config lxgw
@@ -74,6 +78,7 @@ other:
 - run github repo, with sandbox and auto-detect run cmds
 - other lang? maybe prefix with a v or ,?
 - tui，informative
+- draft area, where you can create repos and we auto git it after several days
 
 ## lvl2
 - add comments
@@ -95,7 +100,7 @@ other:
 - show patch upon generating conf
 - we use unstable unfree(?)
 - auto gitignore
-- lazygit delta difft
+- lazygit delta difft(slow)
 - steam install game into global position with correct permission(maybe game grp?)
 - switch between profiles, that's just profile.raw.lua and local/share data?
 - permission issue?

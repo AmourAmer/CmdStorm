@@ -1,4 +1,5 @@
 function 生成配置 --on-event CmdStorm_profile_changed # TODO maybe a daemon listening on raw.lua change
+    # TODO 也许lua那边要diff一下什么的，profile没变的话不用重新生成？感觉问题没这么简单
     echo "\
 -- 此文件由CmdStorm自动生成，请勿编辑！
 -- 请修改旁边的profile.raw.lua文件，那个（只要程序没bug）不会被覆盖
