@@ -1,5 +1,3 @@
-local M = {}
-
 function M.generate(conf)
 	-- TODO how to respect user conf and scripts?
 	local nvim_appname = conf.nvim_appname or "lavi"
@@ -20,5 +18,3 @@ fi ]])
 		},
 	}
 end
-
-return M

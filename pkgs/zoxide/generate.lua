@@ -1,5 +1,3 @@
-local M = {}
-
 function M.generate(conf)
 	local interactive = { "zoxide init fish | source" }
 	return {
@@ -8,5 +6,3 @@ function M.generate(conf)
 		},
 	}
 end
-
-return M

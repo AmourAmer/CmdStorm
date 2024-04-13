@@ -1,5 +1,3 @@
-local M = {}
-
 function M.generate(conf)
 	local cmd_storm_path = conf.path
 	if not cmd_storm_path then
@@ -40,5 +38,3 @@ echo 啊，恶心心！（谁能告诉我怎么获得fish的背景色啊，我�
 		},
 	}
 end
-
-return M
