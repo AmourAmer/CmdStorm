@@ -53,29 +53,6 @@ function F.fish(conf)
 	)
 end
 
-function F.starship(conf)
-	local preset
-	local starship_toml = ""
-	for app, content in pairs(conf) do
-		if content.preset then
-			starship_toml = starship_toml
-				.. "# CmdStorm因"
-				.. app
-				.. "的选项preset "
-				.. content.preset
-				.. "自动生成\n"
-			preset = content.preset
-		end
-	end
-	if preset then
-		print(".config/starship.toml\n" .. starship_toml)
-		os.execute("starship preset " .. preset)
-		print(
-			"\n华丽丽的分割线，就靠这行来分文件了，不可能故意跟我重吧？救命啊，要不是我不会数lua的字符串里的回车数岂能这么憋屈\n"
-		)
-	end
-end
-
 states = {}
 
 -- use configs to compute final state
@@ -84,8 +61,10 @@ for key, value in pairs(profile) do
 	if not value then
 		goto skip
 	end
-	-- TODO shouldn't do this, should have sort of acl
-	state = util.require("src." .. key).generate(value) -- TODO doesn't exist?
+	if not util.require("pkgs." .. key).generate then
+		goto skip
+	end
+	state = util.require("pkgs." .. key).generate(value) -- TODO doesn't exist?
 	for k, v in pairs(state) do
 		-- TODO there is potential type problem
 		if states[k] then
@@ -102,9 +81,23 @@ end
 -- generate files from values of state
 -- TODO value should have a more appropriate name
 for app, value in pairs(states) do
-	if F[app] then
-		F[app](value)
-	end -- TODO else?
+	local F = util.require("pkgs." .. app)
+	if not F.generate then -- TODO any better way to validate?
+		goto skip2
+	end
+	for i, v in pairs(F) do
+		print(i, v)
+	end
+	pcall(F.init)
+	for user, content in pairs(value) do
+		-- TODO acl
+		F.conf(user, content)
+	end
+	F.output()
+	print(
+		"\n华丽丽的分割线，就靠这行来分文件了，不可能故意跟我重吧？救命啊，要不是我不会数lua的字符串里的回车数岂能这么憋屈\n"
+	)
+	::skip2::
 end
 
 -- TODO record managed files. apply patches

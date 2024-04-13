@@ -1,3 +1,4 @@
+local preset
 function M.generate(conf)
 	local starship_presets = {
 		"bracketed-segments",
@@ -12,7 +13,6 @@ function M.generate(conf)
 		"pure-preset",
 		"tokyo-night",
 	}
-	local preset
 	for _, v in pairs(starship_presets) do
 		if conf.preset == v then
 			preset = v
