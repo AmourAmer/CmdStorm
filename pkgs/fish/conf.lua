@@ -1,13 +1,13 @@
-local config_fish = ""
+local config_fish = "if status is-interactive\n"
 local fish_greeting
-config_fish = config_fish .. "if status is-interactive\n"
+local fish_greeting_setter
 -- TODO how about conflicts?
-function M.fish(app, content)
+function M.conf(app, content)
 	-- TODO an option to toggle put in the conf or in a .fish file?
 	-- is-interactive
 	if content["interactive"] then
 		for _, v in pairs(content["interactive"]) do
-			config_fish = back_link(config_fish .. v .. "# ", app)
+			config_fish = back_link(config_fish .. v .. " # ", app)
 		end
 	end
 	-- alias
@@ -21,13 +21,16 @@ function M.fish(app, content)
 	if content.fish_greeting then
 		-- TODO conflict
 		fish_greeting = content["fish_greeting"]
+		fish_greeting_setter = app
 	end
 end
 
-function M.output()
+function M.output(app)
 	-- end of status is-interactive
 	config_fish = config_fish .. "end\n"
-	config_fish = back_link(config_fish .. "function fish_greeting" .. " # ", app) .. fish_greeting .. "\nend\n"
+	config_fish = back_link(config_fish .. "function fish_greeting" .. " # ", fish_greeting_setter)
+		.. fish_greeting
+		.. "\nend\n"
 
 	print(
 		".config/fish/config.fish\n"

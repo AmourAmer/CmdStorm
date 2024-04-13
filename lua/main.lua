@@ -69,7 +69,7 @@ end
 -- TODO value should have a more appropriate name
 for app, value in pairs(states) do
 	local F = util.require("pkgs." .. app)
-	if not F.generate then -- TODO any better way to validate?
+	if not F.output then -- TODO any better way to validate?
 		goto skip2
 	end
 	pcall(F.init)

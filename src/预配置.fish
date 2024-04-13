@@ -6,6 +6,7 @@ function 预配置
         # TODO 这重复地真离谱了，可恶，我需要merge！
         echo " -- 以下
 M.zoxide = M.zoxide or {}
+M.atuin = M.atuin or {}
 M.starship = M.starship or {}
 M.starship.preset = M.starship.preset or \"gruvbox-rainbow\"
 M.CmdStorm = M.CmdStorm or {} -- 不过，应该运行过安装程序了吧？以防万一。
