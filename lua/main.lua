@@ -1,5 +1,32 @@
-package.path = package.path .. ";./?.lua" -- why lua of nix doesn't include this?
-local util = require("util")
+-- TODO looks ugly, any better way? & config_dir
+local util = {}
+local handle = io.popen("id -unz | tr -d '\\0'")
+local whoami = handle:read("*a")
+handle:close()
+handle = io.popen("echo -n $CMD_STORM_PATH")
+local install_path = handle:read("*a")
+handle:close()
+package.path = package.path
+	.. ";/home/"
+	.. whoami
+	.. "/.config/CmdStorm/lua/?.lua"
+	.. ";"
+	.. install_path
+	.. "/lua/?/init.lua" -- TODO change to installed path and .local/share
+	.. ";/home/"
+	.. whoami
+	.. "/.local/share/CmdStorm/lua/pkgs/?/init.lua"
+
+-- TODO comments, maybe
+function util.require(module)
+	local status, profile = pcall(require, module)
+	if status then
+		return profile
+	else
+		return {}
+	end
+end
+
 local profile = util.require("profile") -- TODO print into local/share
 local acl = util.require("acl") -- TODO create and use
 local F = {}

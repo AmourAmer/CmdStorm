@@ -9,7 +9,6 @@ local M = {}
     cat ~/.config/CmdStorm/lua/profile.raw.lua >>~/.config/CmdStorm/lua/profile.lua
     echo "
 return M" >>~/.config/CmdStorm/lua/profile.lua
-    cd $CMD_STORM_PATH/lua/ || return 4
     # split, check, generate, 
     set -l start 1
     set -l file_paths
@@ -31,7 +30,7 @@ return M" >>~/.config/CmdStorm/lua/profile.lua
         else
             set file_content "$file_content"\n"$line"
         end
-    end <(lua main.lua | psub)
+    end <(lua $CMD_STORM_PATH/lua/main.lua | psub)
     for i in (seq (count $file_paths))
         set -l file_path $file_paths[$i]
         set -l file_content $file_contents[$i]
@@ -40,5 +39,4 @@ return M" >>~/.config/CmdStorm/lua/profile.lua
             声明占有 (echo $file_content | psub) >"$HOME/$file_path"
         end
     end
-    cd - # TODO 如果你本身就在lua文件夹里面，那么你会被带走，是一个懒得解决的bug
 end
