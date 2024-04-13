@@ -1,4 +1,5 @@
 -- You don't always need this file
+-- please don't set vars here, define them(like `conf_file`) in generate.lua thx
 function M.conf(app, content)
 	if content.some_arg then
 		conf_file = back_link(conf_file .. " #注释符号 ", app, { some_arg = content.some_arg })

@@ -25,7 +25,7 @@ function M.conf(app, content)
 	end
 end
 
-function M.output(app)
+function M.output()
 	-- end of status is-interactive
 	config_fish = config_fish .. "end\n"
 	config_fish = back_link(config_fish .. "function fish_greeting" .. " # ", fish_greeting_setter)

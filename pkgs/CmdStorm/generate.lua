@@ -28,6 +28,11 @@ echo 总不能还不会写吧？
 echo 感谢使用，感谢支持！
 echo 啊，恶心心！（谁能告诉我怎么获得fish的背景色啊，我好把这句吐槽藏起来）
 ]]
+	elseif conf.fish_greeting == "core" then
+		fish_greeting = [[
+好好好，欢迎使用我爱用的工具
+要是有什么好东西也欢迎告诉我～
+]]
 	end
 	local alias = conf.alias or {}
 	return {

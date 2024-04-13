@@ -1,5 +1,8 @@
 # 在这个文件里面就可以看到新装pkg允许的操作，确乎是局限了些。
 # 而且，很可能有恶意指令的，所以订阅还是要谨慎
+function cat
+    command cat $argv 2>/dev/null
+end
 
 set -l anbody_helps_me_to_name_this
 # pkgs' lua files
