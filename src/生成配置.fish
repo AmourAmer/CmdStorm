@@ -32,6 +32,8 @@ return M" >>~/.config/CmdStorm/lua/profile.lua
             set file_content "$file_content"\n"$line"
         end
     end <(lua $CMD_STORM_PATH/lua/main.lua | psub)
+    提示 将要写入以下路径： $file_paths # 如果没有$前面的空格，fish 3.7.1 会有“有趣”的表现
+    询问 终止 && return 3
     for i in (seq (count $file_paths))
         set -l file_path $file_paths[$i]
         set -l file_content $file_contents[$i]
