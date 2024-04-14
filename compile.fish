@@ -6,6 +6,7 @@ end
 
 set -l anbody_helps_me_to_name_this
 # pkgs' lua files
+# TODO should rm former dir in user local/share
 for pkg in $CMD_STORM_PATH/pkgs/* # TODO should also source .loca/share?config? 糟糕，这样子没法完全用自定义的目录覆盖默认目录
     set path (path dirname (path dirname $pkg))
     set pkg (path basename $pkg) # 虽然可以不加path，但是我dirname那边加了——用fish的builtin也好
