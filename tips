@@ -1,4 +1,5 @@
 理想：学一遍，再也不学？或者一遍都不学？
+目标：让你使用电脑的心情只有舒畅和更舒畅，至少不是因为软件犯愁——就像决定不了自己的硬件，可以决定自己的软件
 use vim as man pager
 atuin
 xargs
@@ -23,6 +24,9 @@ catpuccin
 ~~只要没有用户，就是自由软件~~
 python版本问题？试试conda
 sponsor wine?
+note: 别tmd那么勤劳，多按tab！比如`定时（按秒计）`和`定时（按分计）`
+cmdstorm is the first cmdstorm plugin and integrates a plugin manager
+u盘和冰箱都不是保险箱
 
 
 what's painful learning nvim

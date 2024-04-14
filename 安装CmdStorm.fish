@@ -1,3 +1,5 @@
+# TODO shouldn't use this var
+# TODO replace all $CMD_STORM_PATH vars with installation path after compiling
 source $CMD_STORM_PATH/entry.fish
 
 提示 即将安装CmdStorm

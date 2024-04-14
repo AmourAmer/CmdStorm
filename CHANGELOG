@@ -18,8 +18,12 @@ v0.3.0
 - switch to event
 - compile
 
-## NOW 
+v0.3.1
 - polish README
+- add lazygit, bat, atuin
+
+## NOW 
+- community plugin safety
 - 提拉米苏
 
 ## lvl0
@@ -28,7 +32,6 @@ v0.3.0
 
 ## lvl1
 required:
-- community plugin safety
 - use emoji
 - learn how to ask. search 1st
   - github issue https://github.com/Anduin2017/HowToCook/issues/1317
@@ -45,6 +48,10 @@ required:
 - 抄自发展规划文件的，唯一一行我看不懂的：安装方式的database
 - 装软件的习惯！软件替代，其实是信任谁的问题
 - add license, interactively, and postponed
+- 文件管理，自动检测可删除文件或归档
+- wallpaper
+- 你想用电脑做什么事情，并不是用来给你推广告的！profile/options？聊天，上网，打游戏，录屏，开发，办公，学习，每天长时间手动使用，服务器，
+  - 去直播间
 - apps
   - kopia chezmoi 备份！/快照！
   - font config lxgw
@@ -79,6 +86,15 @@ other:
 - other lang? maybe prefix with a v or ,?
 - tui，informative
 - draft area, where you can create repos and we auto git it after several days
+- fancy effect on clearing todo
+- file format convert, fffmpeg, pandoc
+- where did I learn them
+- import bash and fish history to atuin? at least ask
+- fucking cuda in nix, also python
+- 密码管理
+- show tips when there're longtime cmds, like updating or downloading, compiling
+- yakuake
+- tmux
 
 ## lvl2
 - add comments
@@ -110,7 +126,36 @@ other:
 - 渐进学习typst
 - map K to translate
 - hyprland美化，预设与教程
-- ranger
+- ranger(add the ctrl+d drop)
+- fzf
+- slidev
+- use gpl proj and violate
+- read user yes/no/all/never(how does chezmoi capture my input without return?) and show diff on conf file
+- free chat user app
+- obs virtual camera
+- free as in freedom
+- add OIer profile, with gdb
+- add license easily and interactively, able to postpone that. Should search for it first, or write it in gpl
+- smart alarm to remind you to stand up, randomly generate interval
+- play the music!
+- git-lfs
+- notify on pkgs/ change
+- if profile.lua is much too big, eval and replace it.
+- add 提拉米苏 to todo
+- remind you to subscribe to some health channel? I won't recommend you any.
+- what's the difference between local share and state?
+- global theme changes with time, using, forgot.
+- print lua table, used in back_link and shrinking profile. output lua table as yml, in lazygit
+- install all pkgs in the profile
+- change the spell.fish to format "cmd(alias)"&"cmd(run)"?
+- show files to write and prompt
+- pokemon 
+- 可用字体
+- ignore list
+- user config patch
+- texlive
+- 查看用量
+- 格式化u盘，免责声明，强提醒
 
 ## other
 
@@ -124,3 +169,4 @@ other:
 - 保留关键字：@（作插件前缀？）
 - 不要用$1这种，可能会被翻译成其他语言
 - 注意指令依赖，如systemd
+- 文章求精不求量
