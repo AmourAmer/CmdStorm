@@ -12,12 +12,14 @@ M.starship.preset = M.starship.preset or \"gruvbox-rainbow\"
 M.CmdStorm = M.CmdStorm or {} -- 不过，应该运行过安装程序了吧？以防万一。
 if not M.CmdStorm.alias then -- TODO deduplicate
   M.CmdStorm.alias = {
-    { \"rm\", \"echo 为防止误操作，请使用murder\" },
-    { \"murder\", \"command rm\" },
+    { \"rm\", \"echo 为防止误操作，请使用remove\" },
+    { \"remove\", \"command rm\" },
+    { \"...\", \"../..\" },
   }
 else
-  table.insert(M.CmdStorm.alias, { \"rm\", \"echo 为防止误操作，请使用murder\" })
-  table.insert(M.CmdStorm.alias, { \"murder\", \"command rm\" })
+  table.insert(M.CmdStorm.alias, { \"rm\", \"echo 为防止误操作，请使用remove\" })
+  table.insert(M.CmdStorm.alias, { \"remove\", \"command rm\" })
+  table.insert(M.CmdStorm.alias, { \"...\", \"../..\" })
 end
 M.CmdStorm.fish_greeting = M.CmdStorm.fish_greeting or \"new\"
 -- 由" (realpath (status current-filename)) 于 (date) 添加 >>~/.config/CmdStorm/lua/profile.raw.lua # TODO path, conceal info(or simply a `sed`), not a function?!(relative 学习咒语)
