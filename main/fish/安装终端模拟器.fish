@@ -11,6 +11,6 @@ function 安装终端模拟器
     end
     grep wezterm：firacode-nerd ~/.config/CmdStorm/profile || echo wezterm：firacode-nerd >>~/.config/CmdStorm/profile # TODO
     mkdir -p ~/.local/share/CmdStorm/kitty # TODO XDG_DATA_HOME
-    cp $CMD_STORM_PATH/资源/kitty.conf ~/.local/share/CmdStorm/kitty/kitty.conf
+    cp 这一串中文字会在编译的时候被替换为CmdStorm的安装路径/资源/kitty.conf ~/.local/share/CmdStorm/kitty/kitty.conf
     return 0
 end

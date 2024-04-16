@@ -9,7 +9,6 @@ function 生成配置 --on-event CmdStorm_profile_changed # TODO maybe a daemon 
         end
     end
 
-    set
     # TODO 也许lua那边要diff一下什么的，profile没变的话不用重新生成？感觉问题没这么简单
     echo "\
 -- 此文件由CmdStorm自动生成，请勿编辑！
@@ -28,21 +27,23 @@ return M" >>~/.config/CmdStorm/lua/profile.lua
     set -l file_contents
     set -l file_content ''
     while read line
-        if test $start -eq 1
+        if test $line = "华丽丽的分割线，就靠这行来分文件了，不可能故意跟我重吧？救命啊，要不是我不会数lua的字符串里的回车数岂能这么憋屈"
+            if ! test -z $file_path
+                set -a file_paths $file_path # Hope that space won't break nothing
+                set -a file_contents $file_content # Hope that space won't break nothing, either
+            end
+            set start 1
+        else if test $start -eq 1
             if test -z $line
                 continue
             end
             set file_path "$line"
             set file_content ''
             set start 0
-        else if test $line = "华丽丽的分割线，就靠这行来分文件了，不可能故意跟我重吧？救命啊，要不是我不会数lua的字符串里的回车数岂能这么憋屈"
-            set -a file_paths $file_path # Hope that space won't break nothing
-            set -a file_contents $file_content # Hope that space won't break nothing, either
-            set start 1
         else
             set file_content "$file_content"\n"$line"
         end
-    end <(lua $CMD_STORM_PATH/lua/main.lua | psub)
+    end <(lua 这一串中文字会在编译的时候被替换为CmdStorm的安装路径/lua/main.lua | psub)
     提示 将要写入以下路径： $file_paths # 如果没有$前面的空格，fish 3.7.1 会有“有趣”的表现
     询问 终止 && return 3
     for i in (seq (count $file_paths))

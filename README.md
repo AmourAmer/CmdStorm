@@ -20,7 +20,7 @@
 ```fish
 git clone --depth 1 https://github.com/AmourAmer/CmdStorm
 cd CmdStorm
-set -x CMD_STORM_PATH (realpath .)
+set -x 这一串中文字会在编译的时候被替换为CmdStorm的安装路径 (realpath .)
 fish ./compile.fish
 source ./entry.fish
 ```
@@ -29,7 +29,7 @@ source ./entry.fish
 比如说运行 `预配置` 就能自动配置 starship（美化提示符）, zoxide（智能路径跳转） 和 atuin（命令行历史管理），不过并不会安装，因为我还没写相关的指令。
 或者运行 `？` 获取更多信息，不过我目前还没写。之前做了一些框架性的工作，实用的内容后续会加的，比如装聊天软件。
 
-安装：（需要设置并export `CMD_STORM_PATH`）
+安装：（需要设置并export `这一串中文字会在编译的时候被替换为CmdStorm的安装路径`）
 
 ```fish
 fish ./安装CmdStorm.fish

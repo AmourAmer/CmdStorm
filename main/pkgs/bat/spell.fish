@@ -1,4 +1,4 @@
 if test "$cmd" = bat
-    echo "M.bat = M.bat or {}" $CMD_STORM_COMMENT
+    echo "M.bat = M.bat or {}" 添加追踪信息再写入配置文件，这几个中文字会在编译的时候被换掉
     emit CmdStorm_profile_changed
 end

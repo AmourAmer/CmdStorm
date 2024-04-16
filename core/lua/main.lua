@@ -3,25 +3,27 @@ local util = {}
 local handle = io.popen("id -unz | tr -d '\\0'")
 local whoami = handle:read("*a")
 handle:close()
-handle = io.popen("echo -n $CMD_STORM_PATH")
-local install_path = handle:read("*a")
+handle = io.popen("echo -n $CMD_STORM_DATAHOME")
+local datahome = handle:read("*a")
 handle:close()
+if datahome == "" then
+	datahome = "/home/" .. whoami .. "/.local/share/CmdStorm"
+end
+
 package.path = package.path
 	.. ";/home/"
 	.. whoami
 	.. "/.config/CmdStorm/lua/?.lua"
+	.. ";这一串中文字会在编译的时候被替换为CmdStorm的安装路径/lua/?/init.lua" -- TODO change to installed path and .local/share
 	.. ";"
-	.. install_path
-	.. "/lua/?/init.lua" -- TODO change to installed path and .local/share
-	.. ";/home/"
-	.. whoami
-	.. "/.local/share/CmdStorm/lua/pkgs/?/init.lua"
+	.. datahome
+	.. "/lua/pkgs/?/init.lua"
 
 -- TODO comments, maybe
 function util.require(module)
-	local status, profile = pcall(require, module)
+	local status, result = pcall(require, module)
 	if status then
-		return profile
+		return result
 	else
 		return {}
 	end
