@@ -16,6 +16,29 @@ function cat
     command cat $argv 2>/dev/null
 end
 
+function mage # only 1 arg
+    set -l f
+    while read line
+        if string match '# ?*:' $line >/dev/null
+            if ! test -z $f
+                echo end
+            else
+                set f y
+            end
+            echo -n "if false;"
+            for cmd in (string match -r '# (.*):' $line | tail -n 1 | string split ' ')
+                echo -n "or test \$cmd = '"$cmd"'"
+            end
+            echo
+        else
+            echo $line
+        end
+    end <$argv
+    if ! test -z $f
+        echo end
+    end
+end
+
 # extract plugins
 mkdir -p $CMD_STORM_PATH/{assets,bin,src,pkgs,lua}
 for plugin in $CMD_STORM_PATH/*/
@@ -44,7 +67,7 @@ for pkg in $CMD_STORM_PATH/pkgs/* # TODO should also source .loca/share?config? 
     echo "local M = {}" >>$opath
     cat $ipath/generate.lua >>$opath
     cat $ipath/conf.lua >>$opath
-    cat $ipath/spell.fish >>$magic_book
+    mage $ipath/spell.fish >>$magic_book
     echo "return M" >>$opath
 end
 # TODO those silly handles
