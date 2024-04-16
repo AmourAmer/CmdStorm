@@ -22,8 +22,13 @@ v0.3.1
 - polish README
 - add lazygit, bat, atuin
 
+v0.3.2
+restructure for plugins
+
 ## NOW 
-- community plugin safety
+- conf everything from zero
+- use custom plugin and profile
+- generate preset.fish
 - 提拉米苏
 
 ## lvl0
@@ -32,27 +37,26 @@ v0.3.1
 
 ## lvl1
 required:
-- use emoji
+- ？
+  - use emoji
+  - 订阅列表关键字，比如这个项目只支持nvim，需要emacs可以先去推荐列表看看或者自己找一些别的来订阅，但是用到的时候才下具体的库
+  - 你想用电脑做什么事情，并不是用来给你推广告的！profile/options？聊天，上网，打游戏，录屏，开发，办公，学习，每天长时间手动使用，服务器，音乐，画画，工程
+    - 去直播间
 - learn how to ask. search 1st
   - github issue https://github.com/Anduin2017/HowToCook/issues/1317
 - tedious mode, show conf diff
-- 订阅列表关键字，比如这个项目只支持nvim，需要emacs可以先去推荐列表看看或者自己找一些别的来订阅，但是用到的时候才下具体的库
 - show examples of grep args
-- local/share store data
-- feedback
 - fish completions
 - 长耗时/需要学习的指令给出prompt
-- 禁用已学会的指令
-- 我喜欢/讨厌这个prompt/sth else
-- 自定义备忘notes，unicode之类的
+- 用户数据
+  - 禁用已学会的指令
+  - 我喜欢/讨厌这个prompt/sth else
 - 抄自发展规划文件的，唯一一行我看不懂的：安装方式的database
-- 装软件的习惯！软件替代，其实是信任谁的问题
-- add license, interactively, and postponed
 - 文件管理，自动检测可删除文件或归档
-- wallpaper
-- 你想用电脑做什么事情，并不是用来给你推广告的！profile/options？聊天，上网，打游戏，录屏，开发，办公，学习，每天长时间手动使用，服务器，
-  - 去直播间
-- apps
+- 小指令
+  - 自定义备忘notes，unicode之类的
+  - add license, interactively, and postponed
+  - wallpaper
   - kopia chezmoi 备份！/快照！
   - font config lxgw
   - screenshots
@@ -95,6 +99,10 @@ other:
 - show tips when there're longtime cmds, like updating or downloading, compiling
 - yakuake
 - tmux
+- fucking find
+- replace excel?!
+- 也许需要一些玩意儿来处理yaml toml什么的
+
 
 ## lvl2
 - add comments
@@ -156,6 +164,12 @@ other:
 - texlive
 - 查看用量
 - 格式化u盘，免责声明，强提醒
+- community plugin safety
+- show user confs when ask them whether to replace, and backup
+- why my atuin only searches cmds in one day?! WTF?!
+- zathura and synctex
+- 学习咒语也要告诉用户它是在哪定义怎么实现的
+- self host typing website
 
 ## other
 
