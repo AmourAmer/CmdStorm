@@ -9,6 +9,8 @@ while read line
     else if string match -q -- "- [*](./*)" $line
         set dish (string match -r -- "- \[(.+)]\(\.(.+)\)" $line | tail -n 2)
         echo \# $dish[1]:
-        echo open $argv[1]$dish[2]
+        echo alias $dish[1]=\"open $argv[1]$dish[2]\"
+        echo echo 请在浏览器中查看
+        # TODO 或保存markdown到本地来查看？
     end
 end

@@ -19,14 +19,12 @@ end
 function mage # only 1 arg
     set -l f
     while read line
-        if string match '# ?*:' $line >/dev/null
-            if ! test -z $f
-                echo end
-            else
+        if string match -r '^# .+:' "$line" >/dev/null
+            if test -z $f
                 set f y
             end
-            echo -n "if false;"
-            for cmd in (string match -r '# (.*):' $line | tail -n 1 | string split ' ')
+            echo -n "else if false;"
+            for cmd in (string match -r '^# (.*):' $line | tail -n 1 | string split ' ')
                 echo -n "or test \$cmd = '"$cmd"';"
             end
             echo
@@ -34,15 +32,13 @@ function mage # only 1 arg
             echo $line
         end
     end <$argv
-    if ! test -z $f
-        echo end
-    end
 end
 
 # extract plugins
 set -l dirs (ls $CMD_STORM_PATH/*/ -d)
 mkdir -p $CMD_STORM_PATH/{assets,bin,src/{functions,abbrs},pkgs,lua}
 for plugin in $dirs
+    fish -C "cd $plugin" -c make # TODO show *sh files and makefile, then prompt 
     for dir in assets bin pkgs lua
         cp $plugin$dir/* $CMD_STORM_PATH/$dir -r
     end
@@ -81,16 +77,22 @@ end
 begin
     echo "\
 function 学习咒语 --on-event fish_preexec --description compile.fish编译出来的 # TODO 搜指令应该更优雅一些
+    if string match -r '\n' -q -- \$argv 
+      return 2
+    end
     set -l cmd (echo \$argv | awk '{ print \$1 }' | string trim)
     if type -q \"\$cmd\" # TODO shit, command -vq doesn't know alias!
         return
-    end"
+    end
+    if false"
     cat $magic_book | sed 's/添加追踪信息再写入配置文件，这几个中文字会在编译的时候被换掉/" -- 由" (status current-function) 因指令 $argv 于 (date) 添加 >>~\/.config\/CmdStorm\/lua\/profile.raw.lua/' # TODO path
     echo "\
-    echo CmdStorm也不认识这个指令，要不来开个issue？或者你是想上网搜这个？
-    set -q CMD_STORM_AUTO_BING && test $CMD_STORM_AUTO_BING -ne 0 || 询问 搜索(set_color green)\$argv(set_color normal) y && function \$cmd
+    else
+      echo CmdStorm也不认识这个指令，要不来开个issue？或者你是想上网搜这个？
+      set -q CMD_STORM_AUTO_BING && test $CMD_STORM_AUTO_BING -ne 0 || 询问 搜索(set_color green)\$argv(set_color normal) y && function \$cmd
       open \"https://bing.com/search?q=\$(status current-function) \$argv\"
     end
+  end
 end
 "
 end | fish_indent >$CMD_STORM_PATH/src/functions/学习咒语.fish

@@ -28,11 +28,18 @@ restructure for plugins
 v0.4.1
 search on failed cmd
 
+v0.4.2
+- 终端搜索做菜
+
 ## NOW 
+- ？ and yaml
+- write dependencies
+  - any pkg manager?
+  - fish?
+- use custom plugin 
+- use custom profile
 - conf everything from zero
-- use custom plugin and profile
 - generate preset.fish
-- 提拉米苏
 
 ## lvl0
 - 用这个项目写课本，追踪你的学习路线？（怎么听着像[隔壁项目](https://github.com/AmourAmer/xyloq)干的事情？）

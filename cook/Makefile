@@ -5,4 +5,9 @@ all: recipe
 recipe:
 	curl -L https://github.com/Anduin2017/HowToCook/raw/master/README.md -o recipe # TODO can be very slow, what to do?
 
-.PHONY: all
+update: clean all
+
+clean:
+	rm ./recipe
+
+.PHONY: all update
