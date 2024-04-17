@@ -86,7 +86,10 @@ function 学习咒语 --on-event fish_preexec --description compile.fish编译�
     end"
     cat $magic_book | sed 's/添加追踪信息再写入配置文件，这几个中文字会在编译的时候被换掉/" -- 由" (status current-function) 因指令 $argv 于 (date) 添加 >>~\/.config\/CmdStorm\/lua\/profile.raw.lua/' # TODO path
     echo "\
-    echo CmdStorm也不认识这个指令，要不来开个issue？
+    echo CmdStorm也不认识这个指令，要不来开个issue？或者你是想上网搜这个？
+    set -q CMD_STORM_AUTO_BING && test $CMD_STORM_AUTO_BING -ne 0 || 询问 搜索(set_color green)\$argv(set_color normal) y && function \$cmd
+      open \"https://bing.com/search?q=\$(status current-function) \$argv\"
+    end
 end
 "
 end | fish_indent >$CMD_STORM_PATH/src/functions/学习咒语.fish
