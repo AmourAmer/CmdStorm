@@ -22,8 +22,11 @@ v0.3.1
 - polish README
 - add lazygit, bat, atuin
 
-v0.3.2
+v0.4.0
 restructure for plugins
+
+v0.4.1
+search on failed cmd
 
 ## NOW 
 - conf everything from zero

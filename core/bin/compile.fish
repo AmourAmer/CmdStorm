@@ -27,10 +27,10 @@ function mage # only 1 arg
             end
             echo -n "if false;"
             for cmd in (string match -r '# (.*):' $line | tail -n 1 | string split ' ')
-                echo -n "or test \$cmd = '"$cmd"'"
+                echo -n "or test \$cmd = '"$cmd"';"
             end
             echo
-        else
+        else if ! test -z $f
             echo $line
         end
     end <$argv
@@ -40,8 +40,9 @@ function mage # only 1 arg
 end
 
 # extract plugins
+set -l dirs (ls $CMD_STORM_PATH/*/ -d)
 mkdir -p $CMD_STORM_PATH/{assets,bin,src/{functions,abbrs},pkgs,lua}
-for plugin in $CMD_STORM_PATH/*/
+for plugin in $dirs
     for dir in assets bin pkgs lua
         cp $plugin$dir/* $CMD_STORM_PATH/$dir -r
     end
@@ -80,7 +81,7 @@ end
 begin
     echo "\
 function 学习咒语 --on-event fish_preexec --description compile.fish编译出来的 # TODO 搜指令应该更优雅一些
-    set -l cmd (echo \$argv | awk '{ print \$1 }')
+    set -l cmd (echo \$argv | awk '{ print \$1 }' | string trim)
     if type -q \"\$cmd\" # TODO shit, command -vq doesn't know alias!
         return
     end"
@@ -94,3 +95,4 @@ end
 "
 end | fish_indent >$CMD_STORM_PATH/src/functions/学习咒语.fish
 rm $magic_book
+echo (set_color red)安装已完成，如果你看到上面一大坨输出，请不要慌张，你可以无视它们，它们是无害的（应该吧）(set_color normal) # TODO 该加这句么？或者至少不该在这个文件里放吧？
