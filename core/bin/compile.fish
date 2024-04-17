@@ -40,12 +40,14 @@ function mage # only 1 arg
 end
 
 # extract plugins
-mkdir -p $CMD_STORM_PATH/{assets,bin,src,pkgs,lua}
+mkdir -p $CMD_STORM_PATH/{assets,bin,src/{functions,abbrs},pkgs,lua}
 for plugin in $CMD_STORM_PATH/*/
     for dir in assets bin pkgs lua
         cp $plugin$dir/* $CMD_STORM_PATH/$dir -r
     end
-    cp {$plugin}fish/* $CMD_STORM_PATH/src -r
+    for f in functions abbrs
+        cp $plugin$f/* $CMD_STORM_PATH/src/$f -r
+    end
     # TODO conflicts, and order? maybe I need a list
 end
 
@@ -87,5 +89,5 @@ function 学习咒语 --on-event fish_preexec --description compile.fish编译�
     echo CmdStorm也不认识这个指令，要不来开个issue？
 end
 "
-end | fish_indent >$CMD_STORM_PATH/src/学习咒语.fish
+end | fish_indent >$CMD_STORM_PATH/src/functions/学习咒语.fish
 rm $magic_book
